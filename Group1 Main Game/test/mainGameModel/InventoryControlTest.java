@@ -46,6 +46,21 @@ public class InventoryControlTest {
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         //fail("The test case is a prototype.");
+        System.out.println("**buyLand test case 2**");
+               
+        landPrice = 20;
+        acresToBuy = -10;
+        expResult = -1;
+        result = instance.buyLand(landPrice, acresToBuy, theCrops);
+        assertEquals(expResult, result);
+        
+        System.out.println("**buyLand test case 3**");
+               
+        landPrice = 20;
+        acresToBuy = 201;
+        expResult = -1;
+        result = instance.buyLand(landPrice, acresToBuy, theCrops);
+        assertEquals(expResult, result);
     }
     
 }
