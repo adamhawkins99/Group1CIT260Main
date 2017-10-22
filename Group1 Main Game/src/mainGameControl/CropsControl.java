@@ -35,5 +35,23 @@ public class CropsControl{
 
         }
         
+    public int sellLand (int landPrice , int acresToSell, Crops theCrops){
     
+    if (acresToSell < 0){
+            return -1;
+        }
+        if (acresToSell > 200){
+            return -1;
+        }
+        int wheat = theCrops.getWheatInStore();
+        if ((acresToSell * landPrice) > wheat){
+            return -1;
+        }
+        int acres = theCrops.getAcres();
+        acres += acresToSell;
+        wheat -= (acresToSell * landPrice);
+        theCrops.setWheatInStore(wheat);
+        
+        return wheat;
+    }
 }
