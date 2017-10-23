@@ -5,7 +5,6 @@
  */
 package mainGameControl;
 
-import mainGameControl.CropsControl;
 import mainGameModel.Crops;
 import org.junit.After;
 import org.junit.Before;
@@ -30,7 +29,7 @@ public class CropsControlTest {
     }
 
     /**
-     * Test of buyLand method, of class InventoryControl.
+     * Test of buyLand method, of class CropsControl.
      */
     @Test
     public void testBuyLand1() {
@@ -94,4 +93,3 @@ public class CropsControlTest {
     }
 
 }
-
