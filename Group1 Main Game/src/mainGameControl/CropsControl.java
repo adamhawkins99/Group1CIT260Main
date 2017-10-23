@@ -54,4 +54,17 @@ public class CropsControl{
         
         return wheat;
     }
+    
+    public int feedPeople (int wheatForFeeding, Crops theCrops){
+    if(wheatForFeeding<0){
+        return -1;
+    }
+    int wheat = theCrops.getWheatInStore();
+    if (wheatForFeeding>wheat) {
+        return -1;
+    }
+    wheat-=wheatForFeeding;
+    theCrops.setWheatInStore(wheat);
+    return wheat;
+    }
 }
