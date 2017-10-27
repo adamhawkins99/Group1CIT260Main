@@ -6,32 +6,37 @@
 package group1.main.game;
 
 import mainGameModel.Crops;
+import mainGameModel.Game;
 import mainGameModel.Player;
+import mainGameView.StartProgramView;
 
 /**
  *
  * @author adam
  */
 public class Group1MainGame {
+    private static Game currentGame = null;
+    private static Player player = null;
+public static void main(String[] args) {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        Player playerOne = new Player ();
-        
-        playerOne.setName("Irena Kyman");
-        
-        String  playerOneName = playerOne.getName();
-        
-        System.out.println(playerOne.toString());
-        
-        Crops currentYear = new Crops ();
-        
-        currentYear.setNewPeople(5);
-        currentYear.setNumberWhoDied(10);
-        
-        System.out.println(currentYear.toString());
+StartProgramView startProgramView = new StartProgramView();
+startProgramView.displayStartProgramView();
+}
+
+    public static Game getCurrentGame() {
+        return currentGame;
     }
-    
+
+    public static void setCurrentGame(Game currentGame) {
+        Group1MainGame.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        Group1MainGame.player = player;
+    }
+
 }
