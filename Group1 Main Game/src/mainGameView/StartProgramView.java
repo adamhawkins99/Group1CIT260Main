@@ -32,17 +32,21 @@ public class StartProgramView {
         +"\n*****************************************************************");
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    public void displayStartProgramView() {
-        boolean done = false;
-        do{
-       String playersName = this.getPlayersName();
-        if (playersName.toUpperCase().equals("Q"))
-            return;
-        done=this.doAction(playersName);
-    } while (!done);
-}
-
+public static void displayStartProgramView()
+    {
+        String playersName = getPlayersName();
+        GameControl.createPlayer(playersName);
+        System.out.println("\n\n\n\n");
+        System.out.println(playersName + ", you have been appointed overseer for your");
+        System.out.println("village. Tread carefully, if your people are not fed well");
+        System.out.println("you may lose your head.");
+        
+        displayNextView();
+    }
+    public static void displayNextView() {
+         MainMenuView.displayMainMenuView();
+         System.out.println("Goodbye... thanks for playing.");
+         }
     public static String getPlayersName() {
         String playerName = "";
         Scanner keyboard  = new Scanner(System.in);
@@ -60,19 +64,6 @@ public class StartProgramView {
 
     }
 
-    private boolean doAction(String playersName) {
-        Player player = GameControl.createPlayer(playersName);
-        if (player == null) {
-        System.out.println("\nError creating the player.");
-            return false;
-        }
-        this.displayNextView(player);
-    return true;
-    }
-
-    private void displayNextView(Player player) {
-         MainMenuView.displayMainMenu();
-         System.out.println("Goodbye "+player.getName()+ ", thanks for playing");
-         }
+    
 }
    

@@ -14,12 +14,12 @@ import mainGameModel.Player;
  */
 public class GameControl {
 
-    public static Player createPlayer(String name) {
+    public static Player createPlayer(String playerName) {
         
-        if (name == null){
+        if (playerName == null){
         return null;}
         Player player = new Player();
-        player.setName(name);
+        player.setName(playerName);
         Group1MainGame.setPlayer(player);
         return player;
     }
