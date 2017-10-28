@@ -6,6 +6,7 @@
 package mainGameControl;
 
 import group1.main.game.Group1MainGame;
+import mainGameModel.Crops;
 import mainGameModel.Player;
 
 /**
@@ -14,14 +15,30 @@ import mainGameModel.Player;
  */
 public class GameControl {
 
-    public static Player createPlayer(String playerName) {
+    public static Player createPlayer(String name) {
         
-        if (playerName == null){
+        if (name == null){
         return null;}
         Player player = new Player();
-        player.setName(playerName);
+        player.setName(name);
         Group1MainGame.setPlayer(player);
         return player;
     }
+    public static void createCrops() {
+    Crops theCrops = new Crops();
     
+    theCrops.setYears(0);
+    theCrops.setPopulation(95);
+    theCrops.setNewPeople(5);
+    theCrops.setCropYield(3);
+    theCrops.setNumberWhoDied(0);
+    theCrops.setPharoohsShare(200);
+    theCrops.setWheatInStore(2800);
+    theCrops.setAcres(1000);
+    theCrops.setHarvest(0);
+    theCrops.setPlanted(1000);
+    theCrops.setFed(0);
+    
+    Group1MainGame.setCrops(theCrops);       
+   } 
 }

@@ -36,6 +36,9 @@ public static void displayStartProgramView()
     {
         String playersName = getPlayersName();
         GameControl.createPlayer(playersName);
+        
+        GameControl.createCrops();
+        
         System.out.println("\n\n\n\n");
         System.out.println(playersName + ", you have been appointed overseer for your");
         System.out.println("village. Tread carefully, if your people are not fed well");
@@ -44,7 +47,8 @@ public static void displayStartProgramView()
         displayNextView();
     }
     public static void displayNextView() {
-         MainMenuView.displayMainMenuView();
+        MainMenuView mainMenuView = new MainMenuView();
+         mainMenuView.displayMainMenu();
          System.out.println("Goodbye... thanks for playing.");
          }
     public static String getPlayersName() {

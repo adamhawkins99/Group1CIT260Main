@@ -17,6 +17,7 @@ public class Game implements Serializable{
     private int noPeople;
     private Player player;
     private Crops crops;
+    //private Crops theCrops = null;
 
     public Game() {
     }
@@ -51,6 +52,14 @@ public class Game implements Serializable{
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + ", player=" + player + '}';
     }
+
+    //public Crops getCrops() {
+      //  return theCrops;
+    //}
+
+    //public void setCrops(Crops _cropRef) {
+     //   theCrops = _cropRef;
+    //}
     
     
     

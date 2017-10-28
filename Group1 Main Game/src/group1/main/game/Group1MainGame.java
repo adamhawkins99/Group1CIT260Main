@@ -17,6 +17,7 @@ import mainGameView.StartProgramView;
 public class Group1MainGame {
     private static Game currentGame = null;
     private static Player player = null;
+    private static Crops theCrops = null;
 public static void main(String[] args) {
 
 StartProgramView startProgramView = new StartProgramView();
@@ -37,6 +38,22 @@ startProgramView.displayStartProgramView();
 
     public static void setPlayer(Player player) {
         Group1MainGame.player = player;
+    }
+
+    //public static void setCrops(Crops theCrops) {
+      //  System.out.println("/n*** setCrops method called***");
+    //}
+
+    public static Game getGame() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static Crops getCrops() {
+        return theCrops;
+    }
+    
+    public static void setCrops(Crops _cropRef) {
+        theCrops = _cropRef;
     }
 
 }

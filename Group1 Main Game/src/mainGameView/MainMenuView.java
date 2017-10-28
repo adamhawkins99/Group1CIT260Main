@@ -5,60 +5,102 @@
  */
 package mainGameView;
 
+import java.util.Scanner;
+
 /**
  *
  * @author admin
  */
 public class MainMenuView {
-    private String menu;
 
-    public MainMenuView() {
-        this.menu = "/n"
-                + "/n-------------------------------------"
-                + "/n | Main Menu                        |"
-                + "/n-------------------------------------"
-                + "/nN - Start new game"
-                + "/nG - Get and start saved game"
-                + "/nH - Get help on how to play the game"
-                + "/nS - Save Game"
-                + "/nQ - Quit"
-                + "/n-------------------------------------";
+private  String menu;
+private static final int MAX = 6;
+      
+    public  MainMenuView() {
+        this.menu = "\n"
+                + "\n-------------------------------------"
+                + "\n | Main Menu                        |"
+                + "\n-------------------------------------"
+                + "\n1 - Start new game"
+                + "\n2 - Get and start saved game"
+                + "\n3 - Get help on how to play the game"
+                + "\n4 - Save Game"
+                + "\n5 - Quit"
+                + "\n-------------------------------------";
     }
     
-    
-
-    public void displayMainMenuView() {
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            done = this.doAction(menuOption);
-        }while (!done);
-    }
-
-    private String getMenuOption() {
-        System.out.println("/n*** getMenuOption() function called ***");
-        return "N";
-        
-    }
-
-    private boolean doAction(String menuOption) {
-        System.out.println("/n*** doAction() function called ***");
-        return true;
-    }
-}
-    
-       
-    /*int inputValue = 0;
-    do {
-        System.out.print("Please enter an option:");
-        inputValue = keyboard.nextInt();
-        if(inputValue < 1 || inputValue > MAX)
-        {
-            System.out.printIn("Error: invalid option.");
+        public void displayMainMenu() {
+        int option;
+        //int inputValue;
+    do
+{
+System.out.println(menu);
+option = getUserInput();
+doAction(option);
+}while (option <=1 && option < MAX);
         }
-        } while(inputValue < 1 || inputValue > MAX);
-    return inputValue;
-    }*/
-    
+public static int getUserInput(){
+int inputValue = 0;
+Scanner keyboard = new Scanner(System.in);
+do
+{
+System.out.print("Please enter an option:");
+inputValue = keyboard.nextInt();
+if(inputValue < 1 || inputValue > MAX)
+{
+System.out.println("Error: invalid option.");
+}
+} while(inputValue < 1 || inputValue > MAX);
+
+
+return inputValue;
+
+}
+
+
+public int doAction(int option) {
+switch(option){
+case 1:     
+this.startNewGame();
+break;
+case 2:
+this.startExistingGame();
+break;
+case 3:
+this.displayHelpMenu();
+break;
+case 4:
+this.saveGame();
+break;
+case 5:
+this.quitGame();
+break;
+default:
+System.out.println("\n** Invalid Selection. Try Again **");
+break;
+
+}
+return option;
+}
+
+private void startNewGame() {
+System.out.println("***The startNewGame() Method called***");
+}
+
+private void startExistingGame() {
+System.out.println("***The startExistingGame() Method called***");
+}
+
+private void displayHelpMenu() {
+System.out.println("***The displayHelpMenu() Method called***");
+}
+
+private void saveGame() {
+System.out.println("***The saveGame() Method called***");
+}
+
+private void quitGame() {
+System.out.println("***The quitGame() Method called***");
+}
+}
+ 

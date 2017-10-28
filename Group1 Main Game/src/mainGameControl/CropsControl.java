@@ -12,6 +12,14 @@ import mainGameModel.Crops;
  * @author adam
  */
 public class CropsControl{
+
+    public static int calcLandCost() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void buyLand(Crops theCrop, int toBuy, int price) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     public int buyLand (int landPrice , int acresToBuy, Crops theCrops){
 
        
