@@ -20,6 +20,14 @@ public class CropsControl{
     public static void buyLand(Crops theCrop, int toBuy, int price) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public static void feedPeople(Crops theCrop, int toFeed) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void sellLand(Crops theCrop, int toSell, int price) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     public int buyLand (int landPrice , int acresToBuy, Crops theCrops){
 
        

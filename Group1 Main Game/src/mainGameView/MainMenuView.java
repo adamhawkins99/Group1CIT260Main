@@ -14,7 +14,7 @@ import java.util.Scanner;
 public class MainMenuView {
 
 private  String menu;
-private static final int MAX = 6;
+private static final int MAX = 5;
       
     public  MainMenuView() {
         this.menu = "\n"
@@ -37,7 +37,7 @@ private static final int MAX = 6;
 System.out.println(menu);
 option = getUserInput();
 doAction(option);
-}while (option <=1 && option < MAX);
+}while (option != MAX);
         }
 public static int getUserInput(){
 int inputValue = 0;
