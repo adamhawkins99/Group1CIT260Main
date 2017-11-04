@@ -29,7 +29,7 @@ private static final int MAX = 6;
                 + "\n5 - Back to the Main Menu"
                 + "\n-------------------------------------";
     }
-    public void displayMainMenu() {
+    public void displayGameMenu() {
         int option;
         //int inputValue;
         do
@@ -37,7 +37,7 @@ private static final int MAX = 6;
     System.out.println(menu);
         option = getUserInput();
         doAction(option);
-        }while (option <=1 && option < MAX);
+        }while (option <=1 && option <MAX);
         }
 
     public static int getUserInput(){

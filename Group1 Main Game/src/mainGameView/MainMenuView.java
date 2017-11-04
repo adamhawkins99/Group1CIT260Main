@@ -67,7 +67,7 @@ case 2:
 this.startExistingGame();
 break;
 case 3:
-this.displayHelpMenu();
+HelpMenuView.displayHelpMenuView();
 break;
 case 4:
 this.saveGame();

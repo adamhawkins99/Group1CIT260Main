@@ -17,18 +17,7 @@ public class CropsControl{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public static void buyLand(Crops theCrop, int toBuy, int price) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static void feedPeople(Crops theCrop, int toFeed) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static void sellLand(Crops theCrop, int toSell, int price) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    public int buyLand (int landPrice , int acresToBuy, Crops theCrops){
+        public static int buyLand (int landPrice , int acresToBuy, Crops theCrops){
 
        
               
@@ -51,7 +40,7 @@ public class CropsControl{
 
         }
         
-    public int sellLand (int landPrice , int acresToSell, Crops theCrops){
+    public static int sellLand (int landPrice , int acresToSell, Crops theCrops){
     
     if (acresToSell < 0) {
             return -1;
@@ -71,7 +60,7 @@ public class CropsControl{
         return wheat;
     }
     
-    public int feedPeople (int wheatForFeeding, Crops theCrops){
+    public static int feedPeople (int wheatForFeeding, Crops theCrops){
     if(wheatForFeeding<0){
         return -1;
     }

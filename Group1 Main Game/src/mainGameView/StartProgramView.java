@@ -36,7 +36,6 @@ public static void displayStartProgramView()
     {
         String playersName = getPlayersName();
         GameControl.createPlayer(playersName);
-        
         GameControl.createCrops();
         
         System.out.println("\n\n\n\n");

@@ -16,16 +16,19 @@ public class HelpMenuView {
     
 
     private static final String HELP_MENU = 
-       "\n1 -- What is the goal of the game?"
-            + "\n2 -- Who is Joseph of Eqypt?"
-            + "\n3 -- How do I view the map?"
-            + "\n4 -- How do I move to another location?"
-            + "\n5 -- How do I display a list of available resources?"
-            + "\n6 -- Return to the Main Menu";
+               "\n-------------------------------------"
+             + "\n | Help Menu                        |"
+             + "\n-------------------------------------"
+             + "\n1 -- What is the goal of the game?"
+             + "\n2 -- Who is Joseph of Eqypt?"
+             + "\n3 -- How do I view the map?"
+             + "\n4 -- How do I move to another location?"
+             + "\n5 -- How do I display a list of available resources?"
+             + "\n6 -- Return to the Main Menu";
     
   
 
-    public void displayHelpMenuView() {
+    public static void displayHelpMenuView() {
         
         int option;
         do{
@@ -39,7 +42,7 @@ public class HelpMenuView {
     
    
     
-    private int getMenuOption(){
+    private static int getMenuOption(){
         int inputValue;
         Scanner keyboard = new Scanner(System.in);
         do
@@ -57,7 +60,7 @@ public class HelpMenuView {
         
     }
 
-    public int doAction(int option) {
+    public static int doAction(int option) {
          switch(option){
             case 1: 
                 System.out.println("Your responsibility is to gather the grain from the harvest, provide enough food to the people so they do not go hungry, and reserve the rest in Pharaoh’s granary in preparation for the prophesied famine that is to come in seven years.");

@@ -68,24 +68,19 @@ public class CropsControlTest {
         System.out.println("**feedPeople test case 1**");
         Crops theCrops = new Crops();
         theCrops.setWheatInStore(2800);
-        
-        
         int wheatForFeeding = -10;
         CropsControl instance = new CropsControl();
         int expResult = -1;
         int result = instance.feedPeople(wheatForFeeding, theCrops);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        //fail("The test case is a prototype.");
-        System.out.println("**feedPeople test case 2**");
         
+        System.out.println("**feedPeople test case 2**");
         wheatForFeeding = 2900;
         expResult = -1;
         result = instance.feedPeople(wheatForFeeding, theCrops);
         assertEquals(expResult, result);
         
         System.out.println("**feedPeople test case 3**");
-        
         wheatForFeeding = 2000;
         expResult = 800;
         result = instance.feedPeople(wheatForFeeding, theCrops);

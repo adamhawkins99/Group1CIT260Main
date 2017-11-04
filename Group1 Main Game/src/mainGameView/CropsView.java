@@ -56,7 +56,7 @@ public class CropsView {
 
     } while(toBuy < 0 || toBuy * price > wheat);
 
-CropsControl.buyLand(theCrop, toBuy, price);
+CropsControl.buyLand(price, toBuy, theCrop);
 
 }
     
@@ -92,7 +92,7 @@ CropsControl.buyLand(theCrop, toBuy, price);
 
     } while(toSell < 0 || toSell > acres);
 
-CropsControl.sellLand(theCrop, toSell, price);
+CropsControl.sellLand(price, toSell, theCrop);
     
     }
     public static void feedPeopleView() {
@@ -118,7 +118,7 @@ CropsControl.sellLand(theCrop, toSell, price);
         
     } while(toFeed < 0 );
 
-CropsControl.feedPeople(theCrop, toFeed);
+CropsControl.feedPeople(toFeed, theCrop);
     }        
     }
     
