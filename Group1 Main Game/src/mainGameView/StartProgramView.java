@@ -39,7 +39,7 @@ public static void displayStartProgramView()
         GameControl.createCrops();
         
         System.out.println("\n\n\n\n");
-        System.out.println(playersName + ", you have been appointed overseer for your");
+        System.out.println(playersName + ", you have been appointed Overseer for your");
         System.out.println("village. Tread carefully, if your people are not fed well");
         System.out.println("you may lose your head.");
         
