@@ -87,4 +87,49 @@ public class CropsControlTest {
         assertEquals(expResult, result);
     }
 
+    /**
+     * Test of calcLandCost method, of class CropsControl.
+     */
+    @Test
+    public void testCalcLandCost() {
+        System.out.println("calcLandCost");
+        int expResult = 0;
+        int result = CropsControl.calcLandCost();
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        fail("The test case is a prototype.");
+    }
+
+
+    /**
+     * Test of sellLand method, of class CropsControl.
+     */
+    @Test
+    public void testSellLand() {
+        System.out.println("**sellLand test case 1**");
+        Crops theCrops = new Crops();
+        theCrops.setWheatInStore(2800);
+        theCrops.setAcres(0);
+        
+        int landPrice = 20;
+        int acresToSell = 10;
+        CropsControl instance = new CropsControl();
+        int expResult = 2600;
+        int result = CropsControl.sellLand(landPrice, acresToSell, theCrops);
+        assertEquals(expResult, result);
+
+        System.out.println("**sellLand test case 2**");
+        landPrice = 20;
+        acresToSell = -10;
+        expResult = -1;
+        result = CropsControl.sellLand(landPrice, acresToSell, theCrops);
+        assertEquals(expResult, result);
+        
+        System.out.println("**sellLand test case 3**");
+        landPrice = 0;
+        acresToSell = 0;
+        expResult = 0;
+        result = CropsControl.sellLand(landPrice, acresToSell, theCrops);
+        assertEquals(expResult, result);
+    }
 }

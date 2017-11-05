@@ -53,11 +53,11 @@ public class CropsControl{
             return -1;
         }
         int acres = theCrops.getAcres();
-        acres += acresToSell;
-        wheat -= (acresToSell * landPrice);
+        acres -= acresToSell;
+        wheat += (acresToSell * landPrice);
         theCrops.setWheatInStore(wheat);
         
-        return wheat;
+        return acres;
     }
     
     public static int feedPeople (int wheatForFeeding, Crops theCrops){
