@@ -83,7 +83,7 @@ public class HelpMenuView {
                 break;
             
             case 6: MainMenuView MainMenuView = new MainMenuView();
-                    MainMenuView.displayMainMenu();
+                    MainMenuView.display();
                 break;
         }
         return option;

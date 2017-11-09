@@ -6,7 +6,7 @@
 package mainGameView;
 
 import java.util.Scanner;
-import static mainGameView.MainMenuView.getUserInput;
+//import static mainGameView.MainMenuView.getUserInput;
 
 /**
  *
@@ -15,11 +15,13 @@ import static mainGameView.MainMenuView.getUserInput;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    protected int MAX;
     
-    public View() {
-    }
-    public View(String message) {
+    //public View() {
+    //}
+    public View(String message, int MAX) {
         this.displayMessage = message;
+        this.MAX = MAX;
     }
     @Override
     public void display() {
@@ -28,10 +30,10 @@ public abstract class View implements ViewInterface {
         
     do{
 
-        System.out.println(menu);
-        option = getUserInput();
+        System.out.println(displayMessage);
+        option = getInput();
         doAction(option);
-}while (option != MAX);
+}while (option <=1 && option <MAX);
         }
     
 @Override

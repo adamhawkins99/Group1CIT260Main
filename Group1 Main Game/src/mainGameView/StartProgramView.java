@@ -47,7 +47,7 @@ public static void displayStartProgramView()
     }
     public static void displayNextView() {
         MainMenuView mainMenuView = new MainMenuView();
-         mainMenuView.displayMainMenu();
+         mainMenuView.display();
          System.out.println("Goodbye... thanks for playing.");
          }
     public static String getPlayersName() {

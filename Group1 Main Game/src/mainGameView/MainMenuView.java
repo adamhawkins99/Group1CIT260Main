@@ -13,8 +13,8 @@ import java.util.Scanner;
  */
 public class MainMenuView extends View {
 
-//private  String menu;
-private static final int MAX = 5;
+private  String displayMessage;
+public int MAX = 5;
       
     public  MainMenuView() {
         //this.menu = 
@@ -28,7 +28,7 @@ private static final int MAX = 5;
                 + "\n3 - Get help on how to play the game"
                 + "\n4 - Save Game"
                 + "\n5 - Quit"
-                + "\n-------------------------------------");
+                + "\n-------------------------------------", 5);
     }
     
         //public void displayMainMenu() {
