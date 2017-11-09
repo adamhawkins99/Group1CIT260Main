@@ -11,13 +11,15 @@ import java.util.Scanner;
  *
  * @author admin
  */
-public class MainMenuView extends View{
+public class MainMenuView extends View {
 
-private  String menu;
+//private  String menu;
 private static final int MAX = 5;
       
     public  MainMenuView() {
-        this.menu = "\n"
+        //this.menu = 
+          
+            super("\n"
                 + "\n-------------------------------------"
                 + "\n | Main Menu                        |"
                 + "\n-------------------------------------"
@@ -26,38 +28,39 @@ private static final int MAX = 5;
                 + "\n3 - Get help on how to play the game"
                 + "\n4 - Save Game"
                 + "\n5 - Quit"
-                + "\n-------------------------------------";
+                + "\n-------------------------------------");
     }
     
-        public void displayMainMenu() {
-        int option;
+        //public void displayMainMenu() {
+       // int option;
         //int inputValue;
-    do
-{
-System.out.println(menu);
-option = getUserInput();
-doAction(option);
-}while (option != MAX);
-        }
-public static int getUserInput(){
-int inputValue = 0;
-Scanner keyboard = new Scanner(System.in);
-do
-{
-System.out.print("Please enter an option:");
-inputValue = keyboard.nextInt();
-if(inputValue < 1 || inputValue > MAX)
-{
-System.out.println("Error: invalid option.");
-}
-} while(inputValue < 1 || inputValue > MAX);
+    //do
+//{
+//System.out.println(menu);
+//option = getUserInput();
+//doAction(option);
+//}while (option != MAX);
+       // }
+//public static int getUserInput(){
+//int inputValue = 0;
+//Scanner keyboard = new Scanner(System.in);
+//do
+//{
+//System.out.print("Please enter an option:");
+//inputValue = keyboard.nextInt();
+//if(inputValue < 1 || inputValue > MAX)
+//{
+//System.out.println("Error: invalid option.");
+//}
+//} while(inputValue < 1 || inputValue > MAX);
 
 
-return inputValue;
+//return inputValue;
 
-}
+//}
 
 
+@Override
 public int doAction(int option) {
 switch(option){
 case 1:     

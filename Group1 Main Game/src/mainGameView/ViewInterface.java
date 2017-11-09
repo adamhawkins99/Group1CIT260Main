@@ -12,7 +12,7 @@ package mainGameView;
 public interface ViewInterface {
     public void display();
     public int getInput();
-    public int doAction(String value);
+    public int doAction(int option);
     
     
 }
