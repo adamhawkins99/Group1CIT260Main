@@ -12,13 +12,13 @@ import java.util.Scanner;
  * @author Erin <erinisireland@gmail.com>
  */
 
-public class GameMenuView {
+public class GameMenuView extends View {
 
-private  String menu;
-private static final int MAX = 6;
+//private  String menu;
+//private static final int MAX = 6;
       
     public  GameMenuView() {
-        this.menu = "\n"
+        super("\n"
                 + "\n-------------------------------------"
                 + "\n | Game Menu                        |"
                 + "\n-------------------------------------"
@@ -27,9 +27,9 @@ private static final int MAX = 6;
                 + "\n3 - Move to a new location"
                 + "\n4 - Manage the crops"
                 + "\n5 - Back to the Main Menu"
-                + "\n-------------------------------------";
+                + "\n-------------------------------------", 6);
     }
-    public void displayGameMenu() {
+    /*public void displayGameMenu() {
         int option;
         //int inputValue;
         do
@@ -56,7 +56,8 @@ private static final int MAX = 6;
 
     return inputValue;
 
-}
+}*/
+    @Override
 public int doAction(int option) {
 switch(option){
 case 1:     
@@ -69,7 +70,9 @@ case 3:
 this.moveLocation();
 break;
 case 4:
-this.manageCrops();
+CropsView.buyLandView();
+CropsView.sellLandView();
+CropsView.feedPeopleView();
 break;
 case 5:
 this.mainMenuView();

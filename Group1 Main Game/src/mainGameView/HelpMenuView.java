@@ -11,12 +11,11 @@ import java.util.Scanner;
  *
  * @author adam
  */
-public class HelpMenuView {
-     private static final int MAX = 6;
-    
-
-    private static final String HELP_MENU = 
-               "\n-------------------------------------"
+public class HelpMenuView extends View {
+     
+    //private static final int MAX = 6;
+    public HelpMenuView (){
+    super("\n-------------------------------------"
              + "\n | Help Menu                        |"
              + "\n-------------------------------------"
              + "\n1 -- What is the goal of the game?"
@@ -24,11 +23,15 @@ public class HelpMenuView {
              + "\n3 -- How do I view the map?"
              + "\n4 -- How do I move to another location?"
              + "\n5 -- How do I display a list of available resources?"
-             + "\n6 -- Return to the Main Menu";
+             + "\n6 -- Return to the Main Menu", 6);
+    }
+    
+
+              
     
   
 
-    public static void displayHelpMenuView() {
+   /* public static void displayHelpMenuView() {
         
         int option;
         do{
@@ -58,9 +61,9 @@ public class HelpMenuView {
         
         return inputValue;
         
-    }
-
-    public static int doAction(int option) {
+    }*/
+    @Override
+    public int doAction(int option) {
          switch(option){
             case 1: 
                 System.out.println("Your responsibility is to gather the grain from the harvest, provide enough food to the people so they do not go hungry, and reserve the rest in Pharaoh’s granary in preparation for the prophesied famine that is to come in seven years.");
@@ -88,6 +91,7 @@ public class HelpMenuView {
         }
         return option;
         
-    }
+    }   
+    
 }
 

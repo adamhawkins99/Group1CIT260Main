@@ -13,8 +13,8 @@ import java.util.Scanner;
  */
 public class MainMenuView extends View {
 
-private  String displayMessage;
-public int MAX = 5;
+//private  String displayMessage;
+//public int MAX = 5;
       
     public  MainMenuView() {
         //this.menu = 
@@ -63,14 +63,14 @@ public int MAX = 5;
 @Override
 public int doAction(int option) {
 switch(option){
-case 1:     
-this.startNewGame();
+case 1: GameMenuView GameMenuView = new GameMenuView();
+GameMenuView.display();    
 break;
 case 2:
 this.startExistingGame();
 break;
-case 3:
-HelpMenuView.displayHelpMenuView();
+case 3:HelpMenuView HelpMenuView = new HelpMenuView();
+HelpMenuView.display();
 break;
 case 4:
 this.saveGame();

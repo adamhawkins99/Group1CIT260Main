@@ -33,7 +33,7 @@ public abstract class View implements ViewInterface {
         System.out.println(displayMessage);
         option = getInput();
         doAction(option);
-}while (option <=1 && option <MAX);
+}while (option!=MAX);
         }
     
 @Override
