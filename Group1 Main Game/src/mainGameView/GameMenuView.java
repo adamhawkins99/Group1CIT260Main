@@ -5,7 +5,9 @@
  */
 package mainGameView;
 
+import group1.main.game.Group1MainGame;
 import java.util.Scanner;
+import mainGameModel.Crops;
 
 /**
  *
@@ -70,9 +72,7 @@ case 3:
 this.moveLocation();
 break;
 case 4:
-CropsView.buyLandView();
-CropsView.sellLandView();
-CropsView.feedPeopleView();
+this.manageCrops();
 break;
 case 5:
 this.mainMenuView();
@@ -98,7 +98,10 @@ System.out.println("***The moveLocation() Method called***");
 }
 
 private void manageCrops() {
-System.out.println("***The manageCrops() Method called***");
+Crops theCrop = Group1MainGame.getCrops();
+      System.out.println('\n');
+      
+      CropsView.buyLandView(theCrop);
 }
 
 private void mainMenuView() {
