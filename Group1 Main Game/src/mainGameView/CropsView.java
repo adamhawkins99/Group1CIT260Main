@@ -20,9 +20,10 @@ import mainGameModel.Game;
 public class CropsView {
     private static Scanner keyboard = new Scanner(System.in);
     private static Game theGame =  Group1MainGame.getGame();
-    private static Crops theCrop = Group1MainGame.getCrops();
+    //private static Crops theCrop = Group1MainGame.getCrops();
+    private static Crops theCrop = theGame.getCrop(); 
     
-    public static void buyLandView()
+    public static void buyLandView(Crops theCrop)
     {
     int toBuy = 0;
     int price = CropsControl.calcLandCost();

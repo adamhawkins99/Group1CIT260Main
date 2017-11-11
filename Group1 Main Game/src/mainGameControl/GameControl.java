@@ -7,6 +7,7 @@ package mainGameControl;
 
 import group1.main.game.Group1MainGame;
 import mainGameModel.Crops;
+import mainGameModel.Game;
 import mainGameModel.Player;
 
 /**
@@ -41,4 +42,9 @@ public class GameControl {
     
     Group1MainGame.setCrops(theCrops);       
    } 
+    public static void createNewGame()
+{
+     Game theGame = new Game();
+     Group1MainGame.setGame(theGame);
+}
 }

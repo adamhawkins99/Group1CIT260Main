@@ -60,6 +60,10 @@ public class Game implements Serializable{
     //public void setCrops(Crops _cropRef) {
      //   theCrops = _cropRef;
     //}
+
+    public Crops getCrop() {
+        return crops;
+    }
     
     
     

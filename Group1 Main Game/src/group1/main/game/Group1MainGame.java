@@ -15,9 +15,12 @@ import mainGameView.StartProgramView;
  * @author adam
  */
 public class Group1MainGame {
+    
     private static Game currentGame = null;
     private static Player player = null;
     private static Crops theCrops = null;
+    private static Game Game = null;
+    
 public static void main(String[] args) {
 
 StartProgramView startProgramView = new StartProgramView();
@@ -45,7 +48,7 @@ startProgramView.displayStartProgramView();
     //}
 
     public static Game getGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return Game;
     }
 
     public static Crops getCrops() {
@@ -54,6 +57,10 @@ startProgramView.displayStartProgramView();
     
     public static void setCrops(Crops _cropRef) {
         theCrops = _cropRef;
+    }
+
+    public static void setGame(Game theGame) {
+        Game=theGame;
     }
 
 }
