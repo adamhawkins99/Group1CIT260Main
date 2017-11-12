@@ -37,6 +37,7 @@ public static void displayStartProgramView()
         String playersName = getPlayersName();
         GameControl.createPlayer(playersName);
         GameControl.createCrops();
+        GameControl.createNewGame();
         
         System.out.println("\n\n\n\n");
         System.out.println(playersName + ", you have been appointed Overseer for your");

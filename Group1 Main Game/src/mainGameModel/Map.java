@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mainGameModel;
+/*package mainGameModel;
 
 /**
  *
  * @author adam
  */
-public class Map implements Serializable{
+/*public class Map implements Serializable{
     private int noOfRows;
     private int NoOfColumns;
     private Location[][] locations;
@@ -74,4 +74,4 @@ public class Map implements Serializable{
     }
     
 
-}
+}*/

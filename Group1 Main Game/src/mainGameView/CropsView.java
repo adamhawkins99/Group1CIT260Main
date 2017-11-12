@@ -61,7 +61,7 @@ CropsControl.buyLand(price, toBuy, theCrop);
 
 }
     
-    public static void sellLandView() {
+    public static void sellLandView(Crops theCrop) {
     int toSell = 0;
     int price = CropsControl.calcLandCost();
     System.out.format("Land is selling for %d bushels per acre%n", price);
@@ -96,7 +96,7 @@ CropsControl.buyLand(price, toBuy, theCrop);
 CropsControl.sellLand(price, toSell, theCrop);
     
     }
-    public static void feedPeopleView() {
+    public static void feedPeopleView(Crops theCrop) {
     
     int toFeed = 0;
     int wheat = theCrop.getWheatInStore();
