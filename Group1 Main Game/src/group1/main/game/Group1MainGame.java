@@ -19,7 +19,7 @@ public class Group1MainGame {
     private static Game currentGame = null;
     private static Player player = null;
     private static Crops theCrops = null;
-    private static Game Game = null;
+    private static Game game = null;
     
 public static void main(String[] args) {
 
@@ -48,7 +48,7 @@ startProgramView.displayStartProgramView();
     //}
 
     public static Game getGame() {
-        return Game;
+        return game;
     }
 
     public static Crops getCrops() {
@@ -60,7 +60,7 @@ startProgramView.displayStartProgramView();
     }
 
     public static void setGame(Game theGame) {
-        Game=theGame;
+        game=theGame;
     }
 
 }
