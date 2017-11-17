@@ -17,6 +17,8 @@ public class Game implements Serializable{
     private int noPeople;
     private Player player;
     private Crops crops;
+    private Map map;
+    
     //private Crops theCrops = null;
 
     public Game() {
