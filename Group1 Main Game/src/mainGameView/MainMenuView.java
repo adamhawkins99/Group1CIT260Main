@@ -5,7 +5,9 @@
  */
 package mainGameView;
 
+import group1.main.game.Group1MainGame;
 import java.util.Scanner;
+import mainGameControl.GameControl;
 
 /**
  *
@@ -64,7 +66,11 @@ public class MainMenuView extends View {
 public int doAction(int option) {
 switch(option){
 case 1: GameMenuView GameMenuView = new GameMenuView();
-GameMenuView.display();    
+//calling createNewGame method (Irena)
+int returnValue = GameControl.createNewGame(Group1MainGame.getPlayer());
+if (returnValue<0){
+System.out.println ("ERROR - Failed to create a new game");}
+GameMenuView.display();
 break;
 case 2:
 this.startExistingGame();
