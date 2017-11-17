@@ -8,6 +8,7 @@ package mainGameControl;
 import group1.main.game.Group1MainGame;
 import mainGameModel.Crops;
 import mainGameModel.Game;
+import mainGameModel.Map;
 import mainGameModel.Player;
 
 /**
@@ -42,9 +43,31 @@ public class GameControl {
     
     Group1MainGame.setCrops(theCrops);       
    } 
-    public static void createNewGame()
+    public static int createNewGame(Player player)
 {
+    //game = create a new game object
      Game theGame = new Game();
      Group1MainGame.setGame(theGame);
+     if(player==null){
+     return -1;
+     }
+     theGame.setPlayer(player); //set player in the game
+     Group1MainGame.setCurrentGame(theGame);//assign the game object to the current game attribute in the main class
+     //map = createMap  (noOfRows, noOfColumns)
+     Map theMap = new Map(5,5);
+     //if map == null then
+     //return -1
+     //endif
+     if (theMap==null){
+         return -1;
+         }
+     //assign the map to the game
+     //return 1 indicate success
+     return 1;
+     }
+     
+     
+     
+     
 }
-}
+
