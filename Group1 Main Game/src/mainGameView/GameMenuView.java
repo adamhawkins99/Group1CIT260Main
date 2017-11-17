@@ -9,6 +9,7 @@ import group1.main.game.Group1MainGame;
 import java.util.Scanner;
 import mainGameModel.Crops;
 import mainGameModel.Game;
+import mainGameModel.Location;
 import mainGameModel.Map;
 
 /**
@@ -65,7 +66,8 @@ public class GameMenuView extends View {
 public int doAction(int option) {
 switch(option){
 case 1:     
-this.viewMap();
+this.displayMap();
+//this.viewMap();
 break;
 case 2:
 this.viewList();
@@ -92,8 +94,20 @@ private void viewMap() {
 System.out.println("***The viewMap() Method called***");
 }
 public void displayMap(){
-Game game = Group1MainGame.getCurrentGame();
+  Game game = Group1MainGame.getCurrentGame();
  Map locations=game.getMap();
+ System.out.println("               ********** Egypt***********           ");
+ System.out.println("1 2 3 4 5");
+ for (int row = 1; row<= 5; row++){
+ System.out.print("|");
+ System.out.println(row);
+ for (int column = 1; column<=5; column++){
+ System.out.print("--");
+  }
+ 
+ 
+ }
+ 
         }
 
 private void viewList() {
