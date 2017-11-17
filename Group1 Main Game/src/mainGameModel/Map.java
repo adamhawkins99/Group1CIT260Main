@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/*package mainGameModel;
+package mainGameModel;
 
 /**
  *
  * @author adam
  */
-/*public class Map implements Serializable{
+
+import java.io.Serializable;
+        
+public class Map implements Serializable{
     private int noOfRows;
     private int NoOfColumns;
     private Location[][] locations;
@@ -27,8 +30,8 @@
         this.noOfRows = noOfRows;
         this.NoOfColumns = noOfColumns;
         
-        //create 2-d array for Location objects
-        this.locations = new Location[noOfRows][NoOfColumns];
+       
+        locations = new Location[noOfRows][NoOfColumns];
         
         for (int row = 0; row< noOfRows; row++){
             for(int column = 0; column< noOfColumns; column++){
@@ -36,7 +39,7 @@
                 Location location = new Location();
                 location.setColumn(column);
                 location.setRow(row);
-                location.setVisited(false);
+                
                 
                 //assign the Location object to the current position in array
                 locations[row][column] = location;
@@ -74,4 +77,4 @@
     }
     
 
-}*/
+}
