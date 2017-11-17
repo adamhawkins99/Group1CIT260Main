@@ -15,6 +15,7 @@ public class Location implements Serializable
 {
     private int row;        
     private int column;   
+    //still need to write the string code in the map section
     private String description;
     private String symbol;  
     
@@ -23,7 +24,7 @@ public class Location implements Serializable
     {
     }
     
-    
+    //We are trying to set up our map like a grid(chess board) where each area of the map describes the scene from the string
     public int getRow( )
     {
         return row;
@@ -47,7 +48,9 @@ public class Location implements Serializable
     {
         return description;
     }
-    public String getSymbol()
+    
+     //The symbol method should allow the user to see the description of the scene based on where they are on the map.  
+     public String getSymbol()
     {
         return symbol;
     }  
