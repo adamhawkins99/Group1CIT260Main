@@ -50,6 +50,14 @@ public class Game implements Serializable{
         this.player = player;
     }
 
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
     @Override
     public String toString() {
         return "Game{" + "totalTime=" + totalTime + ", noPeople=" + noPeople + ", player=" + player + '}';

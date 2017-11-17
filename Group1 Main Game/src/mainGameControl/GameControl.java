@@ -62,6 +62,7 @@ public class GameControl {
          return -1;
          }
      //assign the map to the game
+     theGame.setMap(theMap);
      //return 1 indicate success
      return 1;
      }

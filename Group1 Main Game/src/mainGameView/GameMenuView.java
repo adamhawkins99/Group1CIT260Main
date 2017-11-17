@@ -8,6 +8,8 @@ package mainGameView;
 import group1.main.game.Group1MainGame;
 import java.util.Scanner;
 import mainGameModel.Crops;
+import mainGameModel.Game;
+import mainGameModel.Map;
 
 /**
  *
@@ -86,8 +88,13 @@ return option;
 }
 
 private void viewMap() {
+    
 System.out.println("***The viewMap() Method called***");
 }
+public void displayMap(){
+Game game = Group1MainGame.getCurrentGame();
+ Map locations=game.getMap();
+        }
 
 private void viewList() {
 System.out.println("***The viewList() Method called***");
