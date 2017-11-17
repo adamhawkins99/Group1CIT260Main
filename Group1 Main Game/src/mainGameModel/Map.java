@@ -21,7 +21,7 @@ public class Map implements Serializable{
     }
 
     public Map(int noOfRows, int noOfColumns) {
-        
+       //Iren, I think this is where I went wrong in setting it up like a grid  
         if (noOfRows < 1 || noOfColumns < 1){
         System.out.println("Please enter a value greater than zero.");
         return;
@@ -46,7 +46,8 @@ public class Map implements Serializable{
             }
         }
         
-    
+    //I thik we are supposed to add the string so that the user can see a description
+    //of where they are on the map since we are not doing a scene view. 
     
     }
     
