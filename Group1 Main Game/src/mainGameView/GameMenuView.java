@@ -94,17 +94,22 @@ private void viewMap() {
 System.out.println("***The viewMap() Method called***");
 }
 public void displayMap(){
-  Game game = Group1MainGame.getCurrentGame();
- Map locations=game.getMap();
+ Game game = Group1MainGame.getCurrentGame();
+ Map theMap=game.getMap();
+
  System.out.println("               ********** Egypt***********           ");
- System.out.println("1 2 3 4 5");
- for (int row = 1; row<= 5; row++){
- System.out.print("|");
- System.out.println(row);
- for (int column = 1; column<=5; column++){
- System.out.print("--");
-  }
+ System.out.println("   0   1   2   3   4");
+ for (int row = 0; row< 5; row++){
+ System.out.print("\n----------------------");
+ System.out.println("       ");
+ System.out.print(row);
+ for (int column = 0; column<5; column++){
+  System.out.print("|");  
+ Location location = theMap.getLocations(row,column);
+ System.out.print(location.getSymbol());
  
+  }
+
  
  }
  

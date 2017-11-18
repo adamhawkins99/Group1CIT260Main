@@ -13,35 +13,35 @@ package mainGameModel;
 import java.io.Serializable;
         
 public class Map implements Serializable{
-    private int noOfRows;
-    private int noOfColumns;
+    private int numRows;
+    private int numColumns;
     private Location[][] locations;
 
       
     public Map() {
     }
 
-    public Map(int noOfRows, int noOfColumns) {
+    public Map(int numRows, int numColumns) {
        //Iren, I think this is where I went wrong in setting it up like a grid  
        // if (noOfRows < 1 || noOfColumns < 1){
         //System.out.println("Please enter a value greater than zero.");
        // return;
         //}
 
-        this.noOfRows = noOfRows;
-        this.noOfColumns = noOfColumns;
+        //this.numRows = numRows;
+        //this.numColumns = numColumns;
         
        
-        locations = new Location[noOfRows][noOfColumns];
+        locations = new Location[numRows][numColumns];
         //Assign the locations array to the map
         
-        for (int row = 0; row< noOfRows; row++){
-            for(int column = 0; column< noOfColumns; column++){
+        for (int row = 0; row< numRows; row++){
+            for(int column = 0; column< numColumns; column++){
                 //create and initialize new Location object instance
                 Location location = new Location();
-                location.setColumn(column);
-                location.setRow(row);
-                //set visited attribute to false
+                locations [row][column]= location;
+                //location.setColumn(column);
+                //location.setRow(row);
                 //Assign location to the row, and column in array
                 //Use “setter” methods to assign the current row, column and
                 //visited attributes to each Location object created.
@@ -52,39 +52,46 @@ public class Map implements Serializable{
                 locations[row][column] = location;
             }
         }
-        String nile = "\nYou are on the River Nile";
-        locations[0][0].setDescription(nile);
-        
+                
     //I thik we are supposed to add the string so that the user can see a description
     //of where they are on the map since we are not doing a scene view. 
+    String pChourt = "\nYou are on the Pharaoh’s Court ";
+    String storeHouse = "\nYou are in the Pharaoh’s Granary and Storehouse";
+    String wheatField = "\nYou are on the beautiful wheat field";
+    String cornField = "\nYou are on the beautiful Corn Field. There is so much corn here";
+    String barleyField = "\nYou are on the barley field. The Barley crops look good.";
+    for (int i=0; i<numRows; i++){    
+    locations[i][0].setDescription(pChourt);
+    locations[i][0].setSymbol("***");
+    locations[i][1].setDescription(storeHouse);
+    locations[i][1].setSymbol("***");
+    locations[i][2].setDescription(wheatField);
+    locations[i][2].setSymbol("***");
+    locations[i][3].setDescription(cornField);
+    locations[i][3].setSymbol("***");
+    locations[i][4].setDescription(barleyField);
+    locations[i][4].setSymbol("***");
+    }
+    }
     
+
+    public Location getLocations(int numRows, int numColumns) {
+        return locations[numRows][numColumns];
+    }
+    public int getNumRows() {
+        return numRows;
     }
 
-    public Location[][] getLocations(int noOfRows, int noOfColumns) {
-        return locations;
-    }
-    public Location[][] getLocations() {
-        return locations;
-         }
-
-    public void setLocations(Location[][] locations) {
-        this.locations = locations;
+    public void setNoOfRows(int numRows) {
+        this.numRows = numRows;
     }
 
-    public int getNoOfRows() {
-        return noOfRows;
+    public int getNunColumns() {
+        return numColumns;
     }
 
-    public void setNoOfRows(int noOfRows) {
-        this.noOfRows = noOfRows;
-    }
-
-    public int getNoOfColumns() {
-        return noOfColumns;
-    }
-
-    public void setNoOfColumns(int NoOfColumns) {
-        this.noOfColumns = NoOfColumns;
+    public void setNumColumns(int numColumns) {
+        this.numColumns = numColumns;
     }
 
 }
