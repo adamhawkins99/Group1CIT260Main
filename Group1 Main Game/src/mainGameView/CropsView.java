@@ -121,6 +121,42 @@ CropsControl.sellLand(price, toSell, theCrop);
 
 CropsControl.feedPeople(toFeed, theCrop);
     }        
-    }
+public static void plantLandView(Crops theCrop)
+    {
+    int toPlant = 0;
+    System.out.format("Each acre takes one bushel of wheat");
+    int wheat = theCrop.getWheatInStore();
+     do
+
+    {
+       System.out.print("\nHow many acres of land do you wish to plant? ");     
+       toPlant = keyboard.nextInt();
+       if(toPlant < 0)
+
+       {
+
+             System.out.println("I am sorry master, I cannot do this.");
+
+             System.out.println("You cannot plant a negative amount of land.");
+
+        }
+
+        else if(toPlant * CropsControl.WHEAT_FOR_ACRE > wheat)
+
+        {
+
+              System.out.println("I am sorry master, I cannot do this.");
+
+              System.out.println("You do not have enough wheat to plant this much land.");
+
+         }
+
+    } while(toPlant < 0 || toPlant * CropsControl.WHEAT_FOR_ACRE > wheat);
+
+CropsControl.plantLand(toPlant, theCrop);
+
+}    
+
+}
     
 

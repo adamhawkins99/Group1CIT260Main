@@ -130,6 +130,7 @@ Crops theCrop = Group1MainGame.getCrops();
       CropsView.buyLandView(theCrop);
       CropsView.sellLandView(theCrop);
       CropsView.feedPeopleView(theCrop);
+      CropsView.plantLandView(theCrop);
 }
 
 private void mainMenuView() {

@@ -13,6 +13,8 @@ import mainGameModel.Crops;
  * @author adam
  */
 public class CropsControl{
+    public static final int WHEAT_FOR_ACRE = 1;
+    private static final int GATHERED_WHEAT = 3;
     private static final int LAND_BASE = 17;
     private static final int LAND_RANGE = 10;
     //random number generator
@@ -79,4 +81,17 @@ public class CropsControl{
     theCrops.setWheatInStore(wheat);
     return wheat;
     }
+    public static int plantLand (int landToPlant, Crops theCrops) {
+    if (landToPlant<0){
+    return -1;}//entered amount must be positive
+    int acres = theCrops.getAcres();
+    if (landToPlant>acres) {
+    return -1;}//entered amount should be more than land a user have
+    int wheat = theCrops.getWheatInStore();
+    if (landToPlant*WHEAT_FOR_ACRE>wheat) {
+    return -1;}//entered amount must be less than wheat a user has
+    wheat = landToPlant*GATHERED_WHEAT;
+    theCrops.setWheatInStore(wheat);
+    return wheat; 
+     }
 }
