@@ -6,6 +6,7 @@
 package mainGameControl;
 
 import java.util.Random;
+import mainGameExceptions.CropsExceptions;
 import mainGameModel.Crops;
 
 /**
@@ -26,27 +27,24 @@ public class CropsControl{
         return landPrice;
     }
 
-        public static int buyLand (int landPrice , int acresToBuy, Crops theCrops){
-
-       
-              
+        public static void buyLand (int landPrice , int acresToBuy, Crops theCrops) throws CropsExceptions{
+         //check parameters          
         if (acresToBuy < 0){
-            return -1;
-        }
-        if (acresToBuy > 200){
-            return -1;
+            throw new CropsExceptions ("A negative value was input");
         }
         int wheat = theCrops.getWheatInStore();
+        
         if ((acresToBuy * landPrice) > wheat){
-            return -1;
+            throw new CropsExceptions ("There is insufficient wheat to buy this much land");
         }
         int acres = theCrops.getAcres();
         acres += acresToBuy;
         wheat -= (acresToBuy * landPrice);
         theCrops.setWheatInStore(wheat);
         
-        return wheat;
-
+        wheat = theCrops.getWheatInStore();
+        wheat -= (acresToBuy*landPrice);
+        theCrops.setWheatInStore(wheat);
         }
         
     public static int sellLand (int landPrice , int acresToSell, Crops theCrops){

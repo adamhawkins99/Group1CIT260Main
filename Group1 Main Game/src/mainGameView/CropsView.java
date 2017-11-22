@@ -8,6 +8,7 @@ package mainGameView;
 import group1.main.game.Group1MainGame;
 import java.util.Scanner;
 import mainGameControl.CropsControl;
+import mainGameExceptions.CropsExceptions;
 import mainGameModel.Crops;
 import mainGameModel.Game;
 
@@ -30,34 +31,24 @@ public class CropsView {
     System.out.format("Land is selling for %d bushels per acre%n", price);
     int wheat = theCrop.getWheatInStore();
      int population = theCrop.getPopulation();
+     boolean paramsNotOkay;
     do
 
-    {
+    {  paramsNotOkay = false;
        System.out.print("\nHow many acres of land do you wish to buy? ");     
        toBuy = keyboard.nextInt();
-       if(toBuy < 0)
-
+       try
        {
-
+       CropsControl.buyLand(price, toBuy, theCrop);
+       }
+       catch (CropsExceptions e)
+       {
              System.out.println("I am sorry master, I cannot do this.");
 
-             System.out.println("You cannot buy a negative amount of land.");
+             System.out.println(e.getMessage());
+             paramsNotOkay = true;}
 
-        }
-
-        else if(toBuy * price > wheat)
-
-        {
-
-              System.out.println("I am sorry master, I cannot do this.");
-
-              System.out.println("You do not have enough wheat to buy this much land.");
-
-         }
-
-    } while(toBuy < 0 || toBuy * price > wheat);
-
-CropsControl.buyLand(price, toBuy, theCrop);
+    } while(paramsNotOkay);
 
 }
     
