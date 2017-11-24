@@ -16,9 +16,6 @@ public class CropsExceptions extends Exception {
 
     public CropsExceptions(String string) {
         super(string);
-    }
-
-        
-    
-    
+    }  
+       
 }

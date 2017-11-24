@@ -92,25 +92,31 @@ CropsControl.sellLand(price, toSell, theCrop);
     int toFeed = 0;
     int wheat = theCrop.getWheatInStore();
     int population = theCrop.getPopulation();
+    boolean paramNotOkay;
     do
 
     {
+        paramNotOkay = false;
        System.out.print("\nPlease enter the amount of wheat you would like to give people to feed them ");     
        toFeed = keyboard.nextInt();
-       if(toFeed < 0)
-
-       {
+       
+       try {
+           
+       CropsControl.feedPeople(toFeed, theCrop);
+       }
+       catch (CropsExceptions e) {
 
              System.out.println("I am sorry master, I cannot do this.");
 
-             System.out.println("You cannot buy a negative amount of land.");
+             System.out.println(e.getMessage());
+             paramNotOkay=true;
 
         }
 
         
-    } while(toFeed < 0 );
+    } while(paramNotOkay);
 
-CropsControl.feedPeople(toFeed, theCrop);
+
     }        
 public static void plantLandView(Crops theCrop)
     {

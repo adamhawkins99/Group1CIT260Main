@@ -67,17 +67,19 @@ public class CropsControl{
         return acres;
     }
     
-    public static int feedPeople (int wheatForFeeding, Crops theCrops){
-    if(wheatForFeeding<0){
-        return -1;
+    public static void feedPeople (int wheatForFeeding, Crops theCrops) throws CropsExceptions {
+    //entered amount should be positive
+        if(wheatForFeeding<0){
+        throw new CropsExceptions ("A negative value was input");
     }
     int wheat = theCrops.getWheatInStore();
+    //entered amount shouldn't be more that the amount a user have at the moment
     if (wheatForFeeding>wheat) {
-        return -1;
+        throw new CropsExceptions ("There is insufficient wheat to feed these people");
     }
     wheat-=wheatForFeeding;
     theCrops.setWheatInStore(wheat);
-    return wheat;
+    
     }
     public static int plantLand (int landToPlant, Crops theCrops) {
     if (landToPlant<0){
