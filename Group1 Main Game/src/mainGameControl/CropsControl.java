@@ -81,7 +81,7 @@ public class CropsControl{
     theCrops.setWheatInStore(wheat);
     
     }
-    public static int plantLand (int landToPlant, Crops theCrops) {
+    public static int plantLand (int landToPlant, Crops theCrops) throws CropsExceptions{
     if (landToPlant<0){
     return -1;}//entered amount must be positive
     int acres = theCrops.getAcres();
