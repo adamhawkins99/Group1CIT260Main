@@ -92,11 +92,11 @@ CropsControl.sellLand(price, toSell, theCrop);
     int toFeed = 0;
     int wheat = theCrop.getWheatInStore();
     int population = theCrop.getPopulation();
-    boolean paramNotOkay;
+    boolean paramsNotOkay;
     do
 
     {
-        paramNotOkay = false;
+        paramsNotOkay = false;
        System.out.print("\nPlease enter the amount of wheat you would like to give people to feed them ");     
        toFeed = keyboard.nextInt();
        
@@ -109,12 +109,12 @@ CropsControl.sellLand(price, toSell, theCrop);
              System.out.println("I am sorry master, I cannot do this.");
 
              System.out.println(e.getMessage());
-             paramNotOkay=true;
+             paramsNotOkay=true;
 
         }
 
         
-    } while(paramNotOkay);
+    } while(paramsNotOkay);
 
 
     }        
@@ -123,34 +123,48 @@ public static void plantLandView(Crops theCrop)
     int toPlant = 0;
     System.out.format("Each acre takes one bushel of wheat");
     int wheat = theCrop.getWheatInStore();
+    boolean paramsNotOkay;
      do
 
     {
+        paramsNotOkay = false;
        System.out.print("\nHow many acres of land do you wish to plant? ");     
        toPlant = keyboard.nextInt();
-       if(toPlant < 0)
+       if(toPlant >= 0)
 
        {
 
-             System.out.println("I am sorry master, I cannot do this.");
-
-             System.out.println("You cannot plant a negative amount of land.");
+           if(toPlant * CropsControl.WHEAT_FOR_ACRE > wheat)
+               
+           {
+               
+               System.out.println("I am sorry master, I cannot do this.");
+               
+               System.out.println("You do not have enough wheat to plant this much land.");
+               
+           }
 
         }
 
-        else if(toPlant * CropsControl.WHEAT_FOR_ACRE > wheat)
+        else {
+           System.out.println("I am sorry master, I cannot do this.");
+           
+           System.out.println("You cannot plant a negative amount of land.");
+        }
+              try 
+              {
+                  CropsControl.plantLand(toPlant, theCrop);
+                }
+                catch(CropsExceptions e) 
+                
+                {
+                System.out.println("I am sorry master, I cannot do this.");
 
-        {
-
-              System.out.println("I am sorry master, I cannot do this.");
-
-              System.out.println("You do not have enough wheat to plant this much land.");
-
-         }
+                System.out.println(e.getMessage());
+                paramsNotOkay=true;
+                }
 
     } while(toPlant < 0 || toPlant * CropsControl.WHEAT_FOR_ACRE > wheat);
-
-CropsControl.plantLand(toPlant, theCrop);
 
 }    
 
