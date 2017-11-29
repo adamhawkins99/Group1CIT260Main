@@ -48,17 +48,17 @@ public int getInput(){
     try {
     do
 {
-    System.out.print("Please enter an option:");
-    inputValue = this.keyboard.read();
+    this.console.println("Please enter an option:");
+    inputValue = Integer.parseInt (this.keyboard.readLine());
     if(inputValue < 1 || inputValue > MAX)
 {
-    System.out.println("Error: invalid option.");
+    ErrorView.display(this.getClass().getName(), "Error: invalid option.");
 }
 }   while(inputValue < 1 || inputValue > MAX);
 
     }
  catch (Exception e) {
-     System.out.println("Error reading input:" + e.getMessage());
+     ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());
  }
     return inputValue;
 }
