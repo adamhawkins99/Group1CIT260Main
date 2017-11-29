@@ -5,6 +5,12 @@
  */
 package group1.main.game;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import mainGameModel.Crops;
 import mainGameModel.Game;
 import mainGameModel.Player;
@@ -20,11 +26,38 @@ public class Group1MainGame {
     private static Player player = null;
     private static Crops theCrops = null;
     private static Game game = null;
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
     
 public static void main(String[] args) {
-
+    
+    try {
+    //open caracter stream files for end user input and output
+    Group1MainGame.inFile = new BufferedReader (new InputStreamReader(System.in));
+    Group1MainGame.outFile = new PrintWriter (System.out, true);
+    
+//create StartProgramView and start the program
 StartProgramView startProgramView = new StartProgramView();
 startProgramView.displayStartProgramView();
+return;
+} catch (Throwable e) {
+System.out.println ("Exception: "+e.toString() + 
+                    "\nCause: " + e.getCause() +
+                    "\nMessage: " +e.getMessage());
+e.printStackTrace();;
+}
+    finally    {
+        try {
+            if (Group1MainGame.inFile !=null)
+            Group1MainGame.inFile.close();
+            if (Group1MainGame.outFile !=null)
+            Group1MainGame.outFile.close();
+        } catch (IOException ex) {
+            System.out.println("Error closing file");
+            return;
+        }
+    
+    }
 }
 
     public static Game getCurrentGame() {
@@ -62,5 +95,23 @@ startProgramView.displayStartProgramView();
     public static void setGame(Game theGame) {
         game=theGame;
     }
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        Group1MainGame.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        Group1MainGame.inFile = inFile;
+    }
+    
+    
 
 }
