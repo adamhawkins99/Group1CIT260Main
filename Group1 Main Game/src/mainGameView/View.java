@@ -5,6 +5,9 @@
  */
 package mainGameView;
 
+import group1.main.game.Group1MainGame;
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 //import static mainGameView.MainMenuView.getUserInput;
 
@@ -16,6 +19,8 @@ public abstract class View implements ViewInterface {
     
     protected String displayMessage;
     protected int MAX;
+    protected final BufferedReader keyboard = Group1MainGame.getInFile();
+    protected final PrintWriter console = Group1MainGame.getOutFile();
     
     //public View() {
     //}

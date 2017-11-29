@@ -28,6 +28,7 @@ public class Group1MainGame {
     private static Game game = null;
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
+    private static PrintWriter logfile = null;
     
 public static void main(String[] args) {
     
@@ -35,6 +36,10 @@ public static void main(String[] args) {
     //open caracter stream files for end user input and output
     Group1MainGame.inFile = new BufferedReader (new InputStreamReader(System.in));
     Group1MainGame.outFile = new PrintWriter (System.out, true);
+    //open log file
+    
+    String filePath = "log.txt";
+    Group1MainGame.logfile = new PrintWriter(filePath);
     
 //create StartProgramView and start the program
 StartProgramView startProgramView = new StartProgramView();
@@ -52,6 +57,8 @@ e.printStackTrace();;
             Group1MainGame.inFile.close();
             if (Group1MainGame.outFile !=null)
             Group1MainGame.outFile.close();
+            if (Group1MainGame.logfile !=null)
+            Group1MainGame.logfile.close();
         } catch (IOException ex) {
             System.out.println("Error closing file");
             return;
@@ -110,6 +117,14 @@ e.printStackTrace();;
 
     public static void setInFile(BufferedReader inFile) {
         Group1MainGame.inFile = inFile;
+    }
+
+    public static PrintWriter getLogfile() {
+        return logfile;
+    }
+
+    public static void setLogfile(PrintWriter logfile) {
+        Group1MainGame.logfile = logfile;
     }
     
     
