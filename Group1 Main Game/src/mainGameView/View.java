@@ -44,17 +44,22 @@ public abstract class View implements ViewInterface {
 @Override
 public int getInput(){
     int inputValue = 0;
-    Scanner keyboard = new Scanner(System.in);
+    //Scanner keyboard = new Scanner(System.in);
+    try {
     do
 {
     System.out.print("Please enter an option:");
-    inputValue = keyboard.nextInt();
+    inputValue = this.keyboard.read();
     if(inputValue < 1 || inputValue > MAX)
 {
     System.out.println("Error: invalid option.");
 }
 }   while(inputValue < 1 || inputValue > MAX);
 
-return inputValue;
     }
+ catch (Exception e) {
+     System.out.println("Error reading input:" + e.getMessage());
+ }
+    return inputValue;
+}
 }
