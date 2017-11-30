@@ -6,6 +6,9 @@
 package mainGameControl;
 
 import group1.main.game.Group1MainGame;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import mainGameExceptions.GameControlExceptions;
 import mainGameModel.Crops;
 import mainGameModel.Game;
 import mainGameModel.Map;
@@ -66,9 +69,18 @@ public class GameControl {
      //return 1 indicate success
      return 1;
      }
-     
-     
-     
+
+    public static void saveGame(Game currentGame, String filePath) throws GameControlExceptions {
+         
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+        ObjectOutputStream output = new ObjectOutputStream(fops);
+        output.writeObject(currentGame);
+        }
+        catch (Exception e){
+        throw new GameControlExceptions (e.getMessage());
+        }
+    }
+        
      
 }
 

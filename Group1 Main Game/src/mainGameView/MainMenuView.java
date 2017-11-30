@@ -105,11 +105,43 @@ System.out.println("***The displayHelpMenu() Method called***");
 }
 
 private void saveGame() {
-System.out.println("***The saveGame() Method called***");
+this.console.println("\n\nEnter the file path for the file where the game"
+                +"is to be saved.");
+String filePath = this.getInputString();
+
+try {
+GameControl.saveGame(Group1MainGame.getCurrentGame(), filePath);
+}catch (Exception ex){
+ErrorView.display("MainMenuView", ex.getMessage());
+        }
 }
 
 private void quitGame() {
 System.out.println("***The quitGame() Method called***");
+}
+      
+        public String getInputString(){
+            boolean valid = false;
+            String inputValue = null;
+    //Scanner keyboard = new Scanner(System.in);
+    try {
+    while (!valid)
+{
+    this.console.println("Please enter an option:");
+    inputValue = this.keyboard.readLine();
+    if(inputValue.length() <1 )
+{
+    ErrorView.display(this.getClass().getName(), "Error: invalid option.");
+    continue;
+}
+    break;
+}   
+
+    }
+ catch (Exception e) {
+     ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());
+ }
+    return inputValue;
 }
 }
  
