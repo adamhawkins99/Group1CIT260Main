@@ -44,12 +44,12 @@ public abstract class View implements ViewInterface {
 @Override
 public int getInput(){
     int inputValue = 0;
-    //Scanner keyboard = new Scanner(System.in);
+    Scanner keyboard = new Scanner(System.in);
     try {
     do
 {
     this.console.println("Please enter an option:");
-    inputValue = Integer.parseInt (this.keyboard.readLine());
+    inputValue = keyboard.nextInt();
     if(inputValue < 1 || inputValue > MAX)
 {
     ErrorView.display(this.getClass().getName(), "Error: invalid option.");
