@@ -78,8 +78,8 @@ break;
 case 4:
 this.manageCrops();
 break;
-case 5:
-this.mainMenuView();
+case 5:MainMenuView MainMenuView = new MainMenuView();
+    MainMenuView.display();
 break;
 default:
 System.out.println("\n** Invalid Selection. Try Again **");

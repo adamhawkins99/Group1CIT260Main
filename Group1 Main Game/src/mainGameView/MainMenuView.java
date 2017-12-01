@@ -64,84 +64,94 @@ public class MainMenuView extends View {
 
 @Override
 public int doAction(int option) {
-switch(option){
-case 1: GameMenuView GameMenuView = new GameMenuView();
-//calling createNewGame method (Irena)
-int returnValue = GameControl.createNewGame(Group1MainGame.getPlayer());
-if (returnValue<0){
-System.out.println ("ERROR - Failed to create a new game");}
-GameMenuView.display();
-break;
-case 2:
-this.startExistingGame();
-break;
-case 3:HelpMenuView HelpMenuView = new HelpMenuView();
-HelpMenuView.display();
-break;
-case 4:
-this.saveGame();
-break;
-case 5:
-this.quitGame();
-break;
-default:
-System.out.println("\n** Invalid Selection. Try Again **");
-break;
-
-}
-return option;
+    switch(option){
+    case 1: GameMenuView GameMenuView = new GameMenuView();
+    //calling createNewGame method (Irena)
+    int returnValue = GameControl.createNewGame(Group1MainGame.getPlayer());
+    
+    if (returnValue<0){
+    System.out.println ("ERROR - Failed to create a new game");}
+    GameMenuView.display();
+    break;
+    case 2:
+    this.startExistingGame();
+    break;
+    case 3:HelpMenuView HelpMenuView = new HelpMenuView();
+    HelpMenuView.display();
+    break;
+    case 4:
+    this.saveGame();
+    break;
+    case 5:
+    this.quitGame();
+    break;
+    default:
+    System.out.println("\n** Invalid Selection. Try Again **");
+    break;
+    }
+    return option;
 }
 
 private void startNewGame() {
-System.out.println("***The startNewGame() Method called***");
-}
+    System.out.println("***The startNewGame() Method called***");
+    }
 
 private void startExistingGame() {
-System.out.println("***The startExistingGame() Method called***");
+    this.console.println("\n\nEnter the file path for the file where the game"
+                + "is to be saved.");
+    String filePath = this.getInputString();
+
+    try {
+        GameControl.getExistingGame(filePath);
+    }
+    catch (Exception ex){
+        ErrorView.display("MainMenuView", ex.getMessage());
+        }
+    GameMenuView gameMenu = new GameMenuView();
+    gameMenu.display();
 }
 
 private void displayHelpMenu() {
-System.out.println("***The displayHelpMenu() Method called***");
-}
+    System.out.println("***The displayHelpMenu() Method called***");
+    }
 
 private void saveGame() {
-this.console.println("\n\nEnter the file path for the file where the game"
-                +"is to be saved.");
-String filePath = this.getInputString();
+    this.console.println("\n\nEnter the file path for the file where the game"
+                + "is to be saved.");
+    String filePath = this.getInputString();
 
-try {
-GameControl.saveGame(Group1MainGame.getCurrentGame(), filePath);
-}catch (Exception ex){
-ErrorView.display("MainMenuView", ex.getMessage());
+    try {
+        GameControl.saveGame(Group1MainGame.getCurrentGame(), filePath);
+    }
+    catch (Exception ex){
+        ErrorView.display("MainMenuView", ex.getMessage());
         }
 }
 
 private void quitGame() {
-System.out.println("***The quitGame() Method called***");
-}
+    System.out.println("***The quitGame() Method called***");
+   }
       
-        public String getInputString(){
-            boolean valid = false;
-            String inputValue = null;
+    public String getInputString(){
+        boolean valid = false;
+        String inputValue = null;
     //Scanner keyboard = new Scanner(System.in);
-    try {
-    while (!valid)
-{
-    this.console.println("Please enter an option:");
-    inputValue = this.keyboard.readLine();
-    if(inputValue.length() <1 )
-{
+        try {
+    while (!valid){
+        this.console.println("Please enter an option:");
+        inputValue = this.keyboard.readLine();
+        if(inputValue.length() <1 ){
     ErrorView.display(this.getClass().getName(), "Error: invalid option.");
     continue;
-}
-    break;
-}   
-
     }
- catch (Exception e) {
+    break;
+    }   
+    }
+ 
+    catch (Exception e) {
      ErrorView.display(this.getClass().getName(), "Error reading input:" + e.getMessage());
- }
+    }
     return inputValue;
-}
+    }
 }
  
