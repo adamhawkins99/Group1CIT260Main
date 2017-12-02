@@ -20,7 +20,7 @@ public abstract class View implements ViewInterface {
     protected String displayMessage;
     protected int MAX;
     protected final BufferedReader keyboard = Group1MainGame.getInFile();
-    protected final PrintWriter console = Group1MainGame.getOutFile();
+    protected final static PrintWriter console = Group1MainGame.getOutFile();
     
     //public View() {
     //}

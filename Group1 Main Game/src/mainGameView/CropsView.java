@@ -35,7 +35,7 @@ public class CropsView {
     do
 
     {  paramsNotOkay = false;
-       System.out.print("\nHow many acres of land do you wish to buy? ");     
+       View.console.println("\nHow many acres of land do you wish to buy? ");     
        toBuy = keyboard.nextInt();
        try
        {
@@ -60,7 +60,7 @@ public class CropsView {
         do
 
     {
-       System.out.print("\nHow many acres of land do you wish to sell? ");     
+       View.console.println("\nHow many acres of land do you wish to sell? ");     
        toSell = keyboard.nextInt();
        if(toSell < 0)
 
@@ -97,7 +97,7 @@ CropsControl.sellLand(price, toSell, theCrop);
 
     {
         paramsNotOkay = false;
-       System.out.print("\nPlease enter the amount of wheat you would like to give people to feed them ");     
+       View.console.println("\nPlease enter the amount of wheat you would like to give people to feed them ");     
        toFeed = keyboard.nextInt();
        
        try {
@@ -128,7 +128,7 @@ public static void plantLandView(Crops theCrop)
 
     {
         paramsNotOkay = false;
-       System.out.print("\nHow many acres of land do you wish to plant? ");     
+       View.console.println("\nHow many acres of land do you wish to plant? ");     
        toPlant = keyboard.nextInt();
        if(toPlant >= 0)
 
