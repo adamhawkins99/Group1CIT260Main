@@ -167,7 +167,26 @@ public static void plantLandView(Crops theCrop)
     } while(toPlant < 0 || toPlant * CropsControl.WHEAT_FOR_ACRE > wheat);
 
 }    
+public class JavaStringArrayTests2
+{
 
+    private String[] tools = {"plow", "spade", "pick axe"};
+
+    // String array printed
+    public JavaStringArrayTests2()
+    {
+        // new `for` loop
+        for (String s: tools)
+        {
+          System.out.println(s);
+        }
+    }
+
+    // 
+    // New instance.
+    public void main(String[] args)
+    {
+        new JavaStringArrayTests2();
+    }
 }
-    
-
+        }
