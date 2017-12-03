@@ -34,34 +34,7 @@ public class GameMenuView extends View {
                 + "\n5 - Back to the Main Menu"
                 + "\n-------------------------------------", 6);
     }
-    /*public void displayGameMenu() {
-        int option;
-        //int inputValue;
-        do
-{
-    System.out.println(menu);
-        option = getUserInput();
-        doAction(option);
-        }while (option <=1 && option <MAX);
-        }
-
-    public static int getUserInput(){
-        int inputValue = 0;
-        Scanner keyboard = new Scanner(System.in);
-        do
-    {
-    System.out.print("Please enter an option:");
-        inputValue = keyboard.nextInt();
-        if(inputValue < 1 || inputValue > MAX)
-        {
-    System.out.println("Error: invalid option.");
-        }
-    } while(inputValue < 1 || inputValue > MAX);
-
-
-    return inputValue;
-
-}*/
+    
     @Override
 public int doAction(int option) {
 switch(option){
