@@ -14,7 +14,7 @@ import java.util.Objects;
  * @author admin
  */
 public class Player implements Serializable {
-    
+    //The purpose of the player class is to store the players name. 
    private String name;
    private ArrayList<Game> games = new ArrayList<Game>();
    

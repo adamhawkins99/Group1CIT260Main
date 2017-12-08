@@ -17,5 +17,14 @@ public class CropsExceptions extends Exception {
     public CropsExceptions(String string) {
         super(string);
     }  
+     public CropsExceptions(String message, Throwable cause)
+    {
+        super(message, cause);
+    }
+    
+    public CropsExceptions(Throwable cause)
+    {
+        super(cause);
        
+}
 }

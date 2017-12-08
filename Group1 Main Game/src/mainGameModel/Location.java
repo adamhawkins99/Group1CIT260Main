@@ -13,12 +13,12 @@ import java.io.Serializable;
 
 public class Location implements Serializable
 {
-    private String description;
-    private String symbol ;   
+    private String description;  //This should be what you see if you go there
+    private String symbol ;   //What will display when the map is viewed
 
     public Location() {
     }
-
+    //The get and set to store a description of the scene
     public String getDescription() {
         return description;
     }
@@ -26,7 +26,7 @@ public class Location implements Serializable
     public void setDescription(String description) {
         this.description = description;
     }
-
+    //The get and set to store the symbol that will display on the map.
     public String getSymbol() {
         return symbol;
     }

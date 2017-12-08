@@ -12,20 +12,19 @@ import java.io.Serializable;
  * @author admin
  */
 public class Game implements Serializable{
-    
+    //data that are the objects
     private double totalTime;
     private int noPeople;
     private Player player;
     private Crops crops;
     private Map map;
     
-    //private Crops theCrops = null;
-
+    //default costructor
     public Game() {
     }
     
     
-
+    //Get and sets for each of the value objects.
     public double getTotalTime() {
         return totalTime;
     }

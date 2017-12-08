@@ -19,7 +19,7 @@ public class InventoryItem implements Serializable{
     }
 
        
-       
+    //Sets the quantity on hand for this item.   
     public int getQuantityInStock() {
         return quantityInStock;
     }
@@ -27,7 +27,7 @@ public class InventoryItem implements Serializable{
     public void setQuantityInStock(int quantityInStock) {
         this.quantityInStock = quantityInStock;
     }
-
+    //Get and set for the required amount.  
     public int getRequiredAmount() {
         return requiredAmount;
     }

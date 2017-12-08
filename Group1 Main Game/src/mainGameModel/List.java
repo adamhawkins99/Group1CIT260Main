@@ -25,7 +25,7 @@ public class List implements Serializable  {
 public List() {
     
 }
-
+//This is from week 13 where Erin was working on the list and list view
     public int getWheat() {
         return wheat;
     }

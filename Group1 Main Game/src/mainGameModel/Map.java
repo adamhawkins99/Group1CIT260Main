@@ -22,11 +22,8 @@ public class Map implements Serializable{
     }
 
     public Map(int numRows, int numColumns) {
-       //Iren, I think this is where I went wrong in setting it up like a grid  
-       // if (noOfRows < 1 || noOfColumns < 1){
-        //System.out.println("Please enter a value greater than zero.");
-       // return;
-        //}
+       //The map class is set up like a grid, with each location being a different area that
+       //the player can move around in. 
 
         //this.numRows = numRows;
         //this.numColumns = numColumns;
@@ -53,8 +50,7 @@ public class Map implements Serializable{
             }
         }
                 
-    //I thik we are supposed to add the string so that the user can see a description
-    //of where they are on the map since we are not doing a scene view. 
+    //Each of these are the different locations
     String pChourt = "\nYou are on the Pharaoh’s Court ";
     String storeHouse = "\nYou are in the Pharaoh’s Granary and Storehouse";
     String wheatField = "\nYou are on the beautiful wheat field";
@@ -74,7 +70,7 @@ public class Map implements Serializable{
     }
     }
     
-
+    
     public Location getLocations(int numRows, int numColumns) {
         return locations[numRows][numColumns];
     }
