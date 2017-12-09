@@ -42,7 +42,8 @@ case 1:
 this.displayMap();
 //this.viewMap();
 break;
-case 2:
+case 2:ListView ListView = new ListView();
+    ListView.display(); 
 this.viewList();
 break;
 case 3:

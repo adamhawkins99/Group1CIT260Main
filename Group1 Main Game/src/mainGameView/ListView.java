@@ -26,37 +26,39 @@ public class ListView extends View{
              + "\n -------------------------------", 9);
     }
 
-    public String getDisplayMessage() {
-        return displayMessage;
-    }
-
-    @Override
-    public int getInput() {
-        return super.getInput(); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void display() {
-        super.display(); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void setDisplayMessage(String displayMessage) {
-        this.displayMessage = displayMessage;
-    }
-
-    public int getMAX() {
-        return MAX;
-    }
-
-    public void setMAX(int MAX) {
-        this.MAX = MAX;
-    }
-
-    @Override
+   @Override
     public int doAction(int option) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
-    
+         switch(option){
+            case 1: 
+                View.console.println("Great question! Ask another.");
+                break;
+           
+            case 2: 
+                View.console.println("What Joseph doesn't know won't hurt him...");
+                break;
+            
+            case 3: 
+                View.console.println("You...plus...the people you're over.");
+                break;
+            
+            case 4: 
+                View.console.println("We'll check on that for you. Be sure to make them feel welcome.");
+                break;
+            
+            case 5: 
+                View.console.println("Gosh! I hope none! Have you been taking care of your people??");
+                break;
+            case 6:
+                View.console.println("You're a Senior! You're so close!");
+            case 7:
+                View.console.println("There's wheat in the store! Sign me up!");
+            case 8: MainMenuView MainMenuView = new MainMenuView();
+                    MainMenuView.display();
+                break;
+        }
+        return option;
+        
+    }   
+      
     
 }
