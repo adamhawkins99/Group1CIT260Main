@@ -56,6 +56,11 @@ public class Map implements Serializable{
     String wheatField = "\nYou are on the beautiful wheat field";
     String cornField = "\nYou are on the beautiful Corn Field. There is so much corn here";
     String barleyField = "\nYou are on the barley field. The Barley crops look good.";
+    String undevelopedLand = "\nPerhaps we could add more acres of grain here";
+    String desert = "\nThere is not enough water to grow crops here";
+    String village = "\nThis is where the people live. I wonder if they are getting enough food";
+    String cattleField = "\nIt’s good that the cattle has plenty of grass to eat";
+    String stables = "\nThe Pharaoh has many horses and donkeys";
     for (int i=0; i<numRows; i++){    
     locations[i][0].setDescription(pChourt);
     locations[i][0].setSymbol("***");

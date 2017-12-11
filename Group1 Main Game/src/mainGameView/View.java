@@ -35,7 +35,7 @@ public abstract class View implements ViewInterface {
         
     do{
 
-        System.out.println(displayMessage);
+        this.console.println(displayMessage);
         option = getInput();
         doAction(option);
 }while (option!=MAX);

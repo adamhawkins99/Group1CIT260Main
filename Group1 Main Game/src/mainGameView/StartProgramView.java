@@ -25,11 +25,24 @@ public class StartProgramView {
 
     private void displayBanner() {
         
-        System.out.println(
-        "\n******************************************************************"
+        View.console.println(
+        "\n*****************************************************************************************"
          +"*\n*                                                             *"
-        +"\nWelcome to Pharaoh’s court. You have been summoned here to assume your new role as Agricultural Overseer."
-        +"\n*****************************************************************");
+        +"\nWelcome to Pharaoh’s court. You have been summoned here to assume your new role"
+        +"\nas Agricultural Overseer. You report directly to Joseph, Pharaoh’s Vizier. "
+        +"\nYour responsibility is to gather the grain from the harvest,provide enough food "
+        +"\nto the people so they do not go hungry, and reserve the rest in Pharaoh’s granary"
+        +"\nin preparation for the prophesied famine that is to come in seven years."
+        +"\nYou need to know how to plant crops, develop land, feed the people and store the excess."
+        +"\nIf you fail to provide enough food for the people,the people will starve. Some people"
+        +"\nwill die. Your workforce will be diminished, and you will not have enough workers to plant"
+        +"\nand harvest crops. Pharaoh is not be pleased with those who fail him. Those who fail are"
+        +"\nthrown in prison. He's not very nice to prisoners -- just ask the Royal Baker. "
+        +"\nOh, you can't because he's not around anymore. RIP."
+        +"\n"
+        +"\nBe wise and you will be successful..."
+                
+        +"\n***************************************************************************************");
         //throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 public static void displayStartProgramView()
